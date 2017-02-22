@@ -1,14 +1,17 @@
-import jq from 'jquery';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactTestUtils from 'react-addons-test-utils';
-import jsdom from 'jsdom';
-import chai, { expect } from 'chai';
-import chaiJquery from 'chai-jquery';
-import createHistory from 'react-router/lib/browserHistory';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducers from '../../src/js/reducers';
+const jq = require('jquery');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const ReactTestUtils = require('react-addons-test-utils');
+const jsdom = require('jsdom');
+const chai = require('chai');
+const { expect } = require('chai');
+const chaiJquery = require('chai-jquery');
+const createHistory = require('react-router/lib/browserHistory');
+const { Provider } = require('react-redux');
+const { createStore } = require('redux');
+const reducers = require('../../src/js/reducers');
+
+/* eslint react/no-find-dom-node: 0 */
 
 // Global prerequisites to make it work in the command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -42,4 +45,4 @@ $.fn.simulate = function(eventName, value) {
   ReactTestUtils.Simulate[eventName](this[0]);
 };
 
-export { renderComponent, mockHistory, expect };
+module.exports = { renderComponent, mockHistory, expect };

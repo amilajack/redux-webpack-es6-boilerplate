@@ -19,6 +19,3 @@ module.use_strict=true
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
-
-[version]
-^0.31
